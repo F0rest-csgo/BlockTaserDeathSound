@@ -1,10 +1,9 @@
-# BlockTaserDeathSound 阻止电击枪发出声音
+# BlockTaserDeathSound 阻止玩家被电死时发出声音
 This can only work on CSGO
 这个插件只能在CSGO中使用
 
 This plugin is used for block the "ahhhh~" sound when player get tased.
-此插件用于在CSGO社区服务器中玩家被电击时阻止“ahhhh~”的声音。
-
+此插件用于阻止玩家被电击枪电死时发出“ahhhh~”的声音。
 
 
 ## **Convar**
