@@ -8,7 +8,7 @@
 
 
 bool IsTarget[MAXPLAYERS + 1];
-
+ConVar cankillteammate;
 public Plugin myinfo =
 {
 	name = "Block Taser Death Sound",
@@ -29,7 +29,7 @@ public void OnPluginStart()
 		}
 	}
 	AddNormalSoundHook(OnNormalSoundPlayed);
-	
+	cankillteammate = CreateConVar("ds_tk", "0", _, _, true, 0.0, true, 1.0);
 }
 
 public void OnClientPutInServer(int client)
@@ -72,6 +72,8 @@ public Action OnTakeDamage (int victim, int &attacker, int &inflictor, float &da
 		return Plugin_Continue;
 	if(StrContains(sWeapon,"taser") != -1)
 	{	
+		if(GetClientTeam(victim) == GetClientTeam(attacker) && !cankillteammate.BoolValue)
+			return Plugin_Continue;
 		int iDamage = RoundToZero(damage);
 		int health = GetEntProp(victim, Prop_Data, "m_iHealth");
 		if(iDamage < health)
