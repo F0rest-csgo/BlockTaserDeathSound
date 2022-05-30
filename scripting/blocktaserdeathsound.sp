@@ -20,7 +20,7 @@ public Plugin myinfo =
 
 public void OnPluginStart()
 {
-	HookEvent("player_death", Event_PlayerDeath, EventHookMode_Pre);
+	//HookEvent("player_death", Event_PlayerDeath, EventHookMode_Pre);
 	for(int i = 1; i <= MaxClients; i++)
 	{ 
 		if(IsValidClient(i))
@@ -92,7 +92,7 @@ public Action OnTakeDamage (int victim, int &attacker, int &inflictor, float &da
 	}
 	return Plugin_Continue;
 }
-
+/*
 public void Event_PlayerDeath(Event event, const char[] name, bool dontBroadcast)
 {
 	int victim = GetClientOfUserId(event.GetInt("userid"));
@@ -102,7 +102,7 @@ public void Event_PlayerDeath(Event event, const char[] name, bool dontBroadcast
 		SetEventBroadcast(event, true);
 	}
 }
-
+*/
 public void CreateDeathEvent(int victim, int attacker)
 {
 	Event event = CreateEvent("player_death");
@@ -119,5 +119,5 @@ public void CreateDeathEvent(int victim, int attacker)
 		}
 	}
 	
-	delete event;
+	//delete event;
 }
