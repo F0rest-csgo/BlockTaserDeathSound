@@ -10,4 +10,5 @@ This plugin is used for block the "ahhhh~" sound when player get tased.
 
 - ds_tk 0(default) Do your server allow players to kill their teammates? 1/0 你的服务器是否允许玩家击杀队友
 
+## **Security**
 [![Security Status](https://s.murphysec.com/badge/F0rest-csgo/BlockTaserDeathSound.svg)](https://www.murphysec.com/p/F0rest-csgo/BlockTaserDeathSound)
